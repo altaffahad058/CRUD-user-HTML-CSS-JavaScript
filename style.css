@@ -1,0 +1,799 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login-page-body {
+    background-image: linear-gradient(to top right, rgb(91, 117, 233), rgba(0, 0, 0, 0.61));
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100vh;
+}
+
+.logo-text {
+    color: rgba(13, 45, 73, 0.897);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.login-heading {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.login-box {
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 0px 20px;
+    border: none;
+    border-radius: 8px;
+    
+}
+
+label {
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.credentials-input {
+    text-align: left;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+#login-btn {
+    margin: 20px 0px;
+    font-size: 15px;
+    background-color: rgb(91, 117, 233);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#login-btn:hover {
+    background-color: rgb(73, 70, 70);
+}
+
+.confirmation-msg {
+    display: inline;
+    background-color: rgba(19, 141, 19, 0.541);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 8px;
+    z-index: 1;
+    display: none; //to disable or enable popup-window
+}
+
+/* ******************************************all-user css*****************************************************/
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 1px 1px 10px 1px grey;
+    position: sticky;
+    padding: 0 50px;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+.nav-bar-links {
+    display: flex;
+}
+
+.nav-bar-links-text {
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    color: rgba(13, 45, 73, 0.897);
+    display: block;
+    cursor: pointer;
+}
+
+.nav-bar-right,
+.nav-bar-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar-links-text:hover {
+    background-color: #28619b;
+    color: white;
+}
+
+.user-name {
+    display: inline;
+    background-color: rgba(13, 45, 73, 0.897);
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    cursor: pointer;
+    border: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(13, 45, 73, 1);
+    min-width: 160px;
+    margin-top: 1px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(13, 45, 73);
+}
+
+.show {
+    display: block;
+}
+
+.login-icon {
+    font-size: 40px;
+    margin-left: 10px;
+}
+
+.user-name:hover {
+    background-color: rgb(13, 45, 73);
+}
+
+.search-sec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.search-bar {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 0 10px;
+}
+
+#search-input {
+    text-align: left;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    width: 500px;
+    outline: none;
+}
+
+.search-icon {
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+#search-btn {
+    margin: 5px 0px;
+    font-size: 15px;
+    background-color: rgb(91, 117, 233);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#search-btn:hover {
+    background-color: rgba(13, 45, 73, 0.897);
+}
+
+.searching-statement {
+    padding: 20px 20px 20px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    color: rgba(13, 45, 73, 0.897);
+    display: block;
+}
+
+.cards-container {
+    padding: 0 50px 50px 50px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card-template {
+    border: 2px solid rgb(91, 117, 233);;
+    padding: 10px;
+    width: 383px;
+    height: 250px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.card-main-icon {
+    font-size: 50px;
+    margin-left: 10px;
+    color: rgb(91, 117, 233);
+}
+
+.card-img {
+    width: 60px;
+}
+
+.card-icon {
+    font-size: 15px;
+    color: rgb(91, 117, 233);
+}
+
+.contact, .email, .name, .bday, .addr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.contact-email {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.name-bday-addr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.gender-age {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.edit-delete {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.card-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+#edit-btn {
+    font-size: 15px;
+    background-color: rgb(91, 117, 233);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    border: none;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+#edit-btn:hover {
+    background-color: rgba(13, 45, 73, 0.897);
+}
+
+#delete-btn {
+    font-size: 15px;
+    background-color: white;
+    color: red;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    border: 1px solid red;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+#delete-btn:hover {
+    background-color: red;
+    color: white;
+}
+
+.edit-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: none; //to disable or enable popup-window
+}
+
+.edit-popup.show {
+    display: flex; /* Show the popup when it has the 'show' class */
+}
+
+.popup-form {
+    background-color: white;
+    padding: 20px;
+    width: 1000px;
+}
+
+.popup-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 50px);
+    gap: 10px 20px;
+}
+
+.image-url,.first-name,
+.last-name,.phone-number,.email-addr,
+.house-addr,.birth-day,.age,.gender {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.popup-heading {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cross-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.cross-icon {
+    font-size: 20px;
+}
+
+.cross-btn:hover {
+    color: rgba(0, 0, 0, 0.61);
+}
+
+.image-url{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.first-name{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.last-name{
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+.phone-number{
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+.email-addr{
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+
+.house-addr{
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+
+.birth-day{
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+}
+
+.age{
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+}
+
+.gender{
+    grid-column: 3 / 4;
+    grid-row: 4 / 5;
+}
+
+.popup-inputs {
+    width: 300px;
+    padding: 0 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+}
+
+.save-cancel-btn {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 15px;
+    gap: 10px;
+}
+
+#save-btn,
+.cancel-btn,
+#confirm-btn {
+    display: inline;
+    background: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#save-btn {
+    border: 2px solid rgb(91, 117, 233);
+    color: rgb(91, 117, 233);
+}
+
+#save-btn:hover {
+    background-color: rgb(91, 117, 233);
+    color: white;
+}
+
+.cancel-btn:hover {
+    color: rgba(0, 0, 0, 0.521);
+}
+
+.alluser-msg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    z-index: 1;
+    display: none; //to disable or enable popup-window
+}
+
+.alluser-confirmation-msg {
+    display: inline;
+    background-color: rgb(71, 163, 71);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+.alluser-delete-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    display: none; //to disable or enable popup-window
+}
+
+.alluser-delete-container.show {
+    display: flex; /* Show the container when it has the 'show' class */
+}
+
+.alluser-delete-confirmation-msg {
+    width: 500px;
+    padding: 20px;
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.deleter-msg-text1 {
+    font-size: 15px;
+    padding: 3px 0px;
+    color: red;
+}
+
+.deleter-msg-text2 {
+    font-size: 15px;
+    padding: 3px 0px;
+}
+
+.confirm-cancel-btn {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 15px;
+    gap: 10px;
+}
+
+#confirm-btn {
+    border: 2px solid red;
+    color: red;
+}
+
+#confirm-btn:hover {
+    background-color: red;
+    color: white;
+}
+
+/* ******************************************add-user css*****************************************************/
+
+.add-user-main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.add-user-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.add-user-icon {
+    font-size: 40px;
+}
+
+.popup-form2 {
+    background-color: rgba(13, 45, 73, 0.897);
+    width: 1300px;
+    padding: 30px;
+}
+
+.add-user-input {
+    color: white;
+}
+
+.popup-grid-container2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 50px);
+    gap: 10px 20px;
+}
+
+.image-url2,.first-name2,
+.last-name2,.phone-number2,.email-addr2,
+.house-addr2,.birth-day2,.age2,.gender2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.image-url2{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.first-name2{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.last-name2{
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.phone-number2{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.email-addr2{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.house-addr2{
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+.birth-day2{
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+.age2{
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+
+.gender2{
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+
+.popup-inputs2 {
+    width: 400px;
+    padding: 0 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+}
+
+.add-btn {
+    display: flex;
+    justify-content: flex-start;
+    padding: 40px 0px;
+    gap: 10px;
+}
+
+#add-user-btn {
+    display: inline;
+    background: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    border: 2px solid white;
+    color: white;
+}
+
+#add-user-btn:hover {
+    background-color: white;
+    color: rgba(13, 45, 73, 0.897);
+    font-weight: 700;
+}
+
+.adduser-msg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    z-index: 1;
+    display: none; //to disable or enable popup-window
+}
+
+.adduser-confirmation-msg {
+    display: inline;
+    background-color: rgb(71, 163, 71);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+/* ******************************************add-user css*****************************************************/
+
+.background {
+    background-image: linear-gradient(to top right, rgb(91, 117, 233), rgba(0, 0, 0, 0.61));
+    height: 100vh;
+}
+
+.tasks-sec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.tasks-bar {
+    border: none;
+    border-radius: 8px;
+    padding: 0 10px;
+    background-color: white;
+}
+
+.tasks-input {
+    text-align: left;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    width: 500px;
+    outline: none;
+}
+
+#tasks-btn {
+    margin: 5px 0px;
+    font-size: 15px;
+    background: none;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.tasks-icon {
+    color: rgb(91, 117, 233);
+    font-size: 20px;
+}
+
+.todo-list {
+    list-style-type: none;
+    width: 550px;
+    margin-top: 50px;
+}
+
+li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.button-group {
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    color: #007bff;
+}
+
+.tick-img {
+    width: 20px;
+}

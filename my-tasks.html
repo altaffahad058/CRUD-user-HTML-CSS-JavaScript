@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUDify My Tasks Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="nav-bar-right">
+            <div class="nav-bar-links">
+                <h1 class="logo-text">CRUDify</h1>
+                <a class="nav-bar-links-text" href="./all-user.html">All Users</a>
+                <a class="nav-bar-links-text" href="./add-user.html">Add User</a>
+                <a class="nav-bar-links-text" href="./my-tasks.html">My Tasks</a>
+            </div>
+        </div>
+        <div class="nav-bar-left">
+            <div class="dropdown">
+                <button class="user-name" onclick="myFunction()">Emily Jhonson <i class="fa-solid fa-angle-down"></i></button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a id="logout-link" href="javascript:void(0);">Logout</a>
+                </div>
+            </div>
+            <i class="fa-solid fa-circle-user login-icon"></i>
+        </div>
+    </div>
+    <div class="background">
+        <div class="add-user-heading">
+            <h1 class="logo-text">My Todos</h1>
+            <i class="fa-solid fa-clipboard-list add-user-icon"></i>
+        </div>
+        <div class="tasks-sec">
+            <div class="tasks-bar">
+                <input class="tasks-input" id="todo-input" type="text" placeholder="Add your tasks here.....">
+                <button id="tasks-btn" onclick="newElement()" type="submit">
+                    <i class="fa-solid fa-square-plus tasks-icon"></i>
+                </button>
+            </div>
+            <ul class="todo-list" id="todo-list"></ul>
+        </div>
+    </div>
+    <div class="adduser-msg-container">
+        <p class="adduser-confirmation-msg" id="message">
+            User information Added Succesfully!
+        </p>
+    </div>
+    <script src="myTasks-script.js"></script>
+</body>
+</html>
